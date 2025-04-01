@@ -40,6 +40,9 @@ public class task_23Mar {
         assertThat(driver.getCurrentUrl()).isNotBlank().isNotNull().isEqualTo("https://katalon-demo-cura.herokuapp.com/#appointment");
         driver.quit();
 
+
+
+
     }
 }
 

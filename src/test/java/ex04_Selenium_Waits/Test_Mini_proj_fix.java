@@ -1,4 +1,4 @@
-package ex01_Selenium_Basics;
+package ex04_Selenium_Waits;
 
 import io.qameta.allure.Description;
 import org.openqa.selenium.By;
@@ -13,7 +13,8 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Test_Selenium09 {
+public class Test_Mini_proj_fix {
+
     @Test
     @Description("")
     public void test_negative_vwo_login() throws Exception{
@@ -30,15 +31,18 @@ public class Test_Selenium09 {
 
         WebElement buttonSubmit=driver.findElement(By.id("js-login-btn"));
         buttonSubmit.click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
 
 
+        //Use Explicit Wait
+        WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(3));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("notification-box-description")));
 
         WebElement error_msg=driver.findElement(By.className("notification-box-description"));
         Assert.assertEquals(error_msg.getText(),"Your email, password, IP address or location did not match");
 
 
-driver.quit();
+        driver.quit();
 
 
     }
