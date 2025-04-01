@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="LearningSelenium" verbose="1">
+    <test name="All Test Suite">
+        <classes>
+            <class name="ex01_Selenium_Basics.Test_Selenium02"/>
+        </classes>
+    </test>
+
+
+</suite>
